@@ -1,0 +1,61 @@
+### ignore all WordPress folders ###
+wordpress/wp-admin
+wordpress/wp-includes
+wordpress/wp-content/themes/*
+wordpress/wp-content/plugins/*
+wordpress/wp-content/uploads
+wordpress/wp-content/cache
+wordpress/wp-content/wflogs
+wordpress/wp-content/ai1wm-backups
+wordpress/wp-content/updraft
+wordpress/wp-content/mu-plugins
+wordpress/wp-content/*.php
+wordpress/wp-content/wp-rocket-config
+wordpress/wp-content/upgrade
+wordpress/wp-content/w3tc-config
+wordpress/wp-content/wpo-cache
+wordpress/wp-content/cimy-user-manager
+wordpress/wp-content/exports
+wordpress/wp-content/backups*
+wordpress/wp-content/gallery
+wordpress/wp-content/ngg
+wordpress/wp-content/languages
+
+### ignore all files in root ###
+/wordpress/*.*
+
+### npm e composer ###
+vendor/
+composer.lock
+
+### ignore log files and databases ###
+.devilbox
+.phpintel
+.DS_Store
+*.log
+*.sql
+*.sqlite
+*.zip
+*.tgz
+*.gz
+*.tar
+*.tar.gz
+**/.git
+
+### files to keep###
+!.gitignore
+!.htaccess
+!composer.json
+!.github
+!runWPbackup.php
+!/robots.txt
+!/.editorconfig
+!/data/mysql/*
+!up.zip
+!uploads.zip
+
+# Plugin to keep
+!wordpress/wp-content/plugins/advanced-custom-fields-pro
+
+# Theme
+!wordpress/wp-content/themes/raccoon

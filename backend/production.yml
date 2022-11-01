@@ -1,0 +1,46 @@
+version: "3.1"
+
+services:
+  apache:
+    build: .
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${ROOT_USER}
+      WORDPRESS_DB_PASSWORD: ${ROOT_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./configs/php/php.ini:/usr/local/etc/php/php.ini
+    env_file: .env.production
+    depends_on:
+      - db
+    entrypoint:
+      - docker-entrypoint.sh
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${WORDPRESS_DB_NAME}
+      MYSQL_USER: ${ROOT_USER}
+      MYSQL_PASSWORD: ${ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
+    volumes:
+      - db:/var/lib/mysql
+      - ./data/mysql:/data/mysql
+    env_file: .env.production
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: db
+    env_file: .env.production
+
+volumes:
+  db:
