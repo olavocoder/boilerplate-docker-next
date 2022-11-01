@@ -1,0 +1,19 @@
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>https://url-projeto.com.br/api/posts-sitemap</loc>
+		<lastmod>2022-04-13T18:26:36+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://url-projeto.com.br/api/categories-sitemap</loc>
+		<lastmod>2022-04-08T01:27:18+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://url-projeto.com.br/api/tags-sitemap</loc>
+		<lastmod>2022-04-13T18:26:36+00:00</lastmod>
+	</sitemap>
+
+	<sitemap>
+		<loc>https://url-projeto.com.br/api/pages-sitemap</loc>
+		<lastmod>2022-04-18T16:44:44+00:00</lastmod>
+	</sitemap>
+</sitemapindex>

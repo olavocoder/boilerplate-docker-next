@@ -1,0 +1,12 @@
+import styled, { css } from 'styled-components'
+import { devices } from 'styles/utils/devices'
+
+export const Wrapper = styled.div`
+  ${({ theme }) => css`
+    color: ${theme.colors.neutral[0]};
+
+    @media ${devices.laptopS} {
+      color: ${theme.colors.neutral.offwhite};
+    }
+  `}
+`
