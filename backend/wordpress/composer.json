@@ -2,8 +2,7 @@
   "name": "boilerplate-next/boilerplate-next.com.br",
   "description": "Boilerplate Next",
   "require": {
-    "roots/wordpress": "6.0.3",
-    "wpackagist-plugin/integracao-rd-station": "^5.1"
+    "roots/wordpress": "6.0.3"
   },
   "repositories": [
     {

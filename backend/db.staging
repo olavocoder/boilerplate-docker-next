@@ -1,0 +1,50 @@
+#!/bin/bash
+# export .env vars
+export $(grep "ROOT_PASSWORD=" .env.staging)
+export $(grep "REPO_NAME_LOWER=" .env.staging)
+export $(grep "WORDPRESS_DB_NAME=" .env.staging)
+
+# local vars
+container=$REPO_NAME_LOWER"_db_1"
+db_name=$WORDPRESS_DB_NAME
+today="`date +"%Y-%m-%d"`"
+dump_path=data/mysql
+
+# check arg1
+if [[ $1 == "save" ]]; then
+
+    # check if output file exists
+    if [ -e $dump_path/$today.sql ]; then
+        echo "Dump $dump_path/$today.sql already exists."
+        exit
+    fi
+
+    # mysqldump
+    docker exec $container bash -c "mysqldump -u root -p'$ROOT_PASSWORD' $db_name > $dump_path/$today.sql"
+
+    echo "DB dumped to $dump_path/$today.sql"
+
+elif [[ $1 == "load" ]]; then
+    # get last dump file
+    last_dump=$(ls $dump_path | sort -V | tail -n 1)
+
+    # check if there is any dump
+    if [[ $last_dump == "" ]]; then
+        echo "No dump to load."
+        exit
+    fi
+
+    # drop and recreate DB
+    docker exec $container bash -c "mysqladmin -u root -p'$ROOT_PASSWORD' --force drop $db_name"
+
+    docker exec $container bash -c "mysqladmin -u root -p'$ROOT_PASSWORD' create $db_name"
+
+    # upload DB
+    docker exec $container bash -c "mysql -u root -p'$ROOT_PASSWORD' $db_name < /data/mysql/$last_dump"
+
+    echo "$last_dump Loaded in DB."
+else
+    echo "Usage: db [save|load]"
+    echo "Example: db save"
+    echo "Example: db load"
+fi
