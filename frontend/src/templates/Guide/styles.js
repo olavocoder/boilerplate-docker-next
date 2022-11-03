@@ -16,7 +16,7 @@ export const ColExemple = styled(Col)`
     .col-content {
       min-height: 100px;
       color: ${theme.colors.neutral[100]};
-      background: ${theme.colors.holding[75]};
+      background: ${theme.colors.primary[75]};
       padding: 10px;
       border-radius: 4px;
     }
@@ -33,7 +33,7 @@ export const ContainerExemple = styled(Container)`
     }
 
     .content {
-      background: ${theme.colors.holding[75]};
+      background: ${theme.colors.primary[75]};
       padding: 20px;
 
       h2,

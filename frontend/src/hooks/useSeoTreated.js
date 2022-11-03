@@ -2,7 +2,7 @@
 //https://www.npmjs.com/package/next-seo
 
 const UseSeoTreated = ({ seo, page }) => {
-    const title = seo.title
+  const title = seo.title
   const description = seo.description
   const canonical = seo.og_url
   const noindex = seo.robots.follow.index === 'noindex' ? true : false

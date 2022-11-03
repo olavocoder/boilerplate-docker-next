@@ -4,7 +4,7 @@ import { SitemapStream, streamToPromise } from 'sitemap'
 export default async (req, res) => {
   try {
     const smStream = new SitemapStream({
-      hostname: process.env.NEXT_PUBLIC_PORTO_URL,
+      hostname: process.env.NEXT_PUBLIC_FRONT_URL,
       cacheTime: 600000
     })
 
@@ -14,7 +14,7 @@ export default async (req, res) => {
     // Create each URL row
     cats.forEach((cat) => {
       const slug = cat.replace(
-        'https://admin.blog.portoseguro.com.br/category/',
+        `${process.env.NEXT_PUBLIC_WORDPRESS_BASE_URL}/category/`,
         ''
       )
       smStream.write({

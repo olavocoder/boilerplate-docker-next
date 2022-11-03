@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 
 export const WrapperImage = styled.div`
   ${({ theme }) => css`
-    background-color: ${theme.colors.holding[45]};
+    background-color: ${theme.colors.primary[45]};
     position: relative;
     width: 100%;
     max-width: 650px;

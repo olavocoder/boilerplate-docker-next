@@ -1,5 +1,16 @@
 import { wordpressApi } from 'services/api'
 
+export async function getGroupData(id) {
+  try {
+    const response = await wordpressApi.get(`/groups/configs/${id}`)
+    return response.data
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
+
 export async function getMedia(id) {
   try {
     if (!id) return null
@@ -7,7 +18,8 @@ export async function getMedia(id) {
     const response = await wordpressApi.get(`/wp/v2/media/${id}`)
     return response.data
   } catch (error) {
-    throw new Error(error)
+    console.error(error)
+    return []
   }
 }
 
@@ -18,8 +30,8 @@ export async function getPostsCategory(page, numPosts, catID, type = null) {
 
     const response = await wordpressApi.get(route)
     return response.data
-  } catch (err) {
-    console.error(err)
+  } catch (error) {
+    console.error(error)
     return []
   }
 }
@@ -30,7 +42,8 @@ export async function getAllPosts() {
 
     return response.data
   } catch (error) {
-    throw new Error(error)
+    console.error(error)
+    return []
   }
 }
 
@@ -40,7 +53,7 @@ export async function getSearch(slug) {
     return response.data
   } catch (error) {
     console.error(error)
-    return false
+    return []
   }
 }
 
@@ -49,29 +62,7 @@ export async function getPost(slug) {
     const response = await wordpressApi.get(`/wp/v2/get-post-by-slug/${slug}`)
     return response.data
   } catch (error) {
-    throw new Error(error)
+    console.error(error)
+    return []
   }
 }
-
-export async function getSlugs(type) {
-  let elements = []
-
-  switch (type) {
-    case 'posts':
-      elements = await getAllPosts()
-
-      break
-  }
-
-  const elementsIds = elements.map((element) => {
-    return {
-      params: {
-        slug: element.slug
-      }
-    }
-  })
-
-  return elementsIds
-}
-
-

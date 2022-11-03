@@ -12,7 +12,7 @@ export default {
   font: {
     family: {
       normal:
-        "Porto Roobert, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+        "Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
     },
     sizes: {
       small: '0.75rem', // 12px
@@ -28,21 +28,22 @@ export default {
       large2: '3.5rem' // 56px
     },
     height: {
-      small: '1rem',
-      small2: '1.25rem',
-      normal: '1.5rem',
-      normal2: '1.75rem',
-      normal3: '2rem',
-      normal4: '2.25rem',
-      medium: '2.5rem',
+      small: '1rem',  // 16px
+      small2: '1.25rem', // 20px
+      normal: '1.5rem', // 24px
+      normal2: '1.75rem', // 28px
+      normal3: '2rem', // 32px
+      normal4: '2.25rem', // 36px
+      medium: '2.5rem', // 40px
       medium2: '2.75rem',
-      medium3: '3rem',
+      medium3: '3rem', // 48px
       large: '3.25rem',
       large2: '3.75rem'
     },
     weight: {
+      light: 300,
+      regular: 400, // base
       medium: 500,
-      semibold: 600, // base
       bold: 700
     },
     spacing: {
@@ -75,11 +76,11 @@ export default {
     xxlarge: '1.5rem' // xlg ()
   },
   layers: {
-    base: 10,
+    base: 1,
     menu: 20,
-    overlay: 30,
-    modal: 40,
-    alwaysOnTop: 50
+    overlay: 40,
+    modal: 60,
+    inFront: 99
   },
   border: {
     radius: '4px',

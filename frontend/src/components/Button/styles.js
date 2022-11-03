@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { rgba } from 'styles/utils/rgba'
 
 const wrapperModifiers = {
   primary: (theme, textColor, palette, intensity, hover, pressed) => css`
@@ -33,89 +32,6 @@ const wrapperModifiers = {
     &:disabled {
       background-color: ${theme.colors.neutral[75]};
       border-color: ${theme.colors.neutral[75]};
-      color: ${theme.colors.neutral[60]};
-
-      > svg {
-        path {
-          fill: ${theme.colors.neutral[60]};
-        }
-      }
-    }
-  `,
-
-  secondary: (theme, textColor, palette, intensity) => css`
-    background-color: transparent;
-    border-color: ${theme.colors[palette][intensity]};
-    color: ${theme.colors[palette][intensity]};
-
-    > svg {
-      path {
-        fill: ${theme.colors[palette][intensity]};
-      }
-    }
-
-    &:hover {
-      background-color: ${rgba(
-        theme.colors[palette][intensity],
-        palette === 'neutral' ? 0.15 : 0.05
-      )};
-    }
-
-    &:focus,
-    &:active {
-      background-color: ${rgba(
-        theme.colors[palette][intensity],
-        palette === 'neutral' ? 0.3 : 0.15
-      )};
-      border-color: ${theme.colors[palette][intensity]};
-      outline: none;
-    }
-
-    &:disabled {
-      background-color: transparent;
-      border-color: ${theme.colors.neutral[65]};
-      color: ${theme.colors.neutral[60]};
-
-      > svg {
-        path {
-          fill: ${theme.colors.neutral[60]};
-        }
-      }
-    }
-  `,
-
-  ghost: (theme, textColor, palette, intensity) => css`
-    background-color: transparent;
-    border-color: transparent;
-    color: ${theme.colors[palette][intensity]};
-
-    > svg {
-      path {
-        fill: ${theme.colors[palette][intensity]};
-      }
-    }
-
-    &:hover {
-      background-color: ${rgba(
-        theme.colors[palette][intensity],
-        palette === 'neutral' ? 0.15 : 0.05
-      )};
-      border-color: transparent;
-    }
-
-    &:focus,
-    &:active {
-      background-color: ${rgba(
-        theme.colors[palette][intensity],
-        palette === 'neutral' ? 0.3 : 0.15
-      )};
-      border-color: transparent;
-      outline: none;
-    }
-
-    &:disabled {
-      background-color: transparent;
-      border-color: transparent;
       color: ${theme.colors.neutral[60]};
 
       > svg {

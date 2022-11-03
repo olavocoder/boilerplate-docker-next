@@ -4,13 +4,7 @@ import Base from 'templates/Base'
 
 import * as S from './styles'
 
-export default function LoadingTemplate({ header, contrast, fontsize }) {
-  header = {
-    ...header,
-    contrast: contrast,
-    fontsize: fontsize
-  }
-
+export default function LoadingTemplate({ header }) {
   return (
     <Base header={header}>
       <S.Wrapper>
