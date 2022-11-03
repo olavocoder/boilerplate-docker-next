@@ -4,7 +4,7 @@ export const lightColors = {
   black: '#000',
   white: '#FFF',
   gray: '#CCC',
-  holding: {
+  primary: {
     100: '#0046C0', //100% (Intensidade)
     85: '#2662C9', // 85%
     75: '#1381E2', // 75%
@@ -57,7 +57,7 @@ export const lightColors = {
     base: '#FFA40',
     dark: '#A6341D',
     darknes: '#842310'
-  },
+  }
 }
 
 export const darkColors = {
@@ -117,7 +117,7 @@ export const darkColors = {
     base: '#FFA40',
     light: '#A6341D',
     lightest: '#842310'
-  },
+  }
 }
 
 export const SetTheme = (props) => {

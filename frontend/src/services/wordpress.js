@@ -10,7 +10,6 @@ export async function getGroupData(id) {
   }
 }
 
-
 export async function getMedia(id) {
   try {
     if (!id) return null

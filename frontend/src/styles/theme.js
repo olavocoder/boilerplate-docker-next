@@ -28,7 +28,7 @@ export default {
       large2: '3.5rem' // 56px
     },
     height: {
-      small: '1rem',  // 16px
+      small: '1rem', // 16px
       small2: '1.25rem', // 20px
       normal: '1.5rem', // 24px
       normal2: '1.75rem', // 28px

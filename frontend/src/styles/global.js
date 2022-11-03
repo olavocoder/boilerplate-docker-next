@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
       }
 
       @media ${devices.tabletL} {
-        background: ${theme.color.primary[0]};
+        background: ${theme.colors.primary[0]};
       }
 
       &.font-large {

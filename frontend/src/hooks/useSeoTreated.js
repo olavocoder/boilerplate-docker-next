@@ -1,11 +1,19 @@
 //Tratar as informações conforme a biblioteca:
 //https://www.npmjs.com/package/next-seo
 
-const UseSeoTreated = ({ seo }) => {
-  const title = seo.title
-  const description = seo.description
-  const canonical = seo.og_url
-  const noindex = seo.robots.follow.index === 'noindex' ? true : false
+export const UseSeoTreated = (seo) => {
+  if (!seo) {
+    console.log(seo)
+  }
+  // const title = seo.title
+  // const description = seo.description
+  // const canonical = seo.og_url
+  // const noindex = seo.robots.follow.index === 'noindex' ? true : false
+
+  const title = ''
+  const description = ''
+  const canonical = ''
+  const noindex = ''
 
   const data = {
     title,
@@ -16,5 +24,3 @@ const UseSeoTreated = ({ seo }) => {
 
   return data
 }
-
-export default UseSeoTreated

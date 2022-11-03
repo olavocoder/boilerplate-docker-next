@@ -10,7 +10,7 @@ const useCommonData = async (path = '') => {
 
   const data = {
     header: { ...header, path },
-    footer,
+    footer
   }
 
   return data

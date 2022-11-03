@@ -1,5 +1,4 @@
 import UseCommonData from 'hooks/useCommonData'
-import { getPageData } from 'services/wordpress'
 import HomeTemplate from 'templates/Home'
 
 export default function Home(data) {
@@ -8,13 +7,14 @@ export default function Home(data) {
 
 export async function getStaticProps() {
   const configs = await UseCommonData()
-  const data = await getPageData('home')
+  const data = []
 
-  if (data[0] === undefined || !data[0]) {
-    return {
-      notFound: true
-    }
-  }
+  // go to notfound
+  // if (data[0] === undefined || !data[0]) {
+  //   return {
+  //     notFound: true
+  //   }
+  // }
 
   const seo = {
     title: 'Home',
